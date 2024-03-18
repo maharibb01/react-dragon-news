@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, logout } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const handleRegister = e => {
         e.preventDefault();
@@ -18,6 +20,8 @@ const Register = () => {
         createUser(email, password)
             .then(res => {
                 console.log(res.user);
+                logout();
+                navigate("/login")
             })
             .catch(err => {
                 console.log(err.message);
