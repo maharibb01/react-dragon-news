@@ -10,9 +10,8 @@ const Home = () => {
             <Header></Header>
             <BreakingNews></BreakingNews>
             <Navbar></Navbar>
-            <h2 className="text-3xl font-bold">This is home</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-                <div className="border">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mt-5">
+                <div>
                     <LeftSideNav></LeftSideNav>
                 </div>
                 <div className="lg:col-span-2 border">

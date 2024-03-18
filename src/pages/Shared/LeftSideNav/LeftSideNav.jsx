@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const LeftSideNav = () => {
 
@@ -8,13 +9,21 @@ const LeftSideNav = () => {
         fetch("categories.json")
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
+                setCategories(data);
             })
     }, [])
 
     return (
         <div>
-            <h2>Left side</h2>
+            <h2 className="text-2xl font-bold mb-10">All Category</h2>
+            <div className="space-y-8">
+                {
+                    categories.map(category => {
+                        return <Link to={`/category/${category.id}`} className="block font-semibold" key={category.id}>{category.name}</Link>
+                    })
+                }
+            </div>
         </div>
     );
 };

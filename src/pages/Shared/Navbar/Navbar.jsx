@@ -7,6 +7,7 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/about">About</NavLink></li>
         <li><NavLink to="/career">Career</NavLink></li>
+        <li><NavLink to="/login">Login</NavLink></li>
     </>
 
     return (
@@ -27,14 +28,14 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className="flex items-center gap-2">
+                <div className="flex items-center gap-2">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img alt="Tailwind CSS Navbar component" src={userDefaultPic} />
                         </div>
                     </div>
-                    <button className="btn">Login</button>
-                </Link>
+                    <Link to="/login"><button className="btn">Login</button></Link>
+                </div>
             </div>
         </div>
     );
